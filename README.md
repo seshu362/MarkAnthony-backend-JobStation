@@ -165,5 +165,3 @@ This is the backend for the Job Station application, deployed on Render.
 | createdAt | TEXT   | DEFAULT CURRENT_TIMESTAMP |
 
 
-## License
-This project is licensed under the MIT License.

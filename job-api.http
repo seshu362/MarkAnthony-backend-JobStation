@@ -1,0 +1,100 @@
+### Signup a new user
+POST http://localhost:5000/signup
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+### Signup a new user
+POST http://localhost:5000/signup
+Content-Type: application/json
+
+{
+  "username": "seshu",
+  "email": "seshu4028@gmail.com",
+  "password": "seshu4028"
+}
+
+### Login with the new user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+### Login with the new user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "seshu4028@gmail.com",
+  "password": "seshu4028"
+}
+
+### Get all job listings (public access)
+GET http://localhost:5000/jobs
+
+### Get a single job listing by ID (public access)
+GET http://localhost:5000/jobs/1
+
+### Create a new job listing (requires authentication)
+POST http://localhost:5000/jobs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzQxNjcxMzY1LCJleHAiOjE3NDE2NzQ5NjV9.WCv1A2dpUggTUwNdAoDGLRD_lK7VwSttRTXKpzuWDT0
+
+{
+  "companyName": "Tech Corp",
+  "companyLogoUrl": "https://logo.clearbit.com/tech-corp-logo.png",
+  "jobPosition": "Frontend Developer",
+  "monthlySalary": 5000,
+  "jobType": "Full-Time",
+  "remote": "Remote",
+  "location": "San Francisco, CA",
+  "jobDescription": "We are looking for a skilled Frontend Developer...",
+  "aboutCompany": "Tech Corp is a leading tech company...",
+  "skillsRequired": "HTML5, CSS, JavaScript, React",
+  "additionalInfo": "Experience with responsive design is a plus."
+}
+
+### Update a job listing (requires authentication and ownership)
+PUT http://localhost:5000/jobs/6
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzQxNjcxMzY1LCJleHAiOjE3NDE2NzQ5NjV9.WCv1A2dpUggTUwNdAoDGLRD_lK7VwSttRTXKpzuWDT0
+
+{
+  "companyName": "Updated Tech Corp",
+  "jobPosition": "Senior Frontend Developer",
+  "monthlySalary": 6000,
+  "jobType": "Full-Time",
+  "remote": "Remote",
+  "location": "San Francisco, CA",
+  "jobDescription": "We are looking for a Senior Frontend Developer...",
+  "aboutCompany": "Tech Corp is a leading tech company...",
+  "skillsRequired": "HTML5, CSS, JavaScript, React, TypeScript",
+  "additionalInfo": "Experience with responsive design and cross-browser compatibility is a plus."
+}
+
+### Delete a job listing (requires authentication and ownership)
+DELETE http://localhost:5000/jobs/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzQxNjcxMzY1LCJleHAiOjE3NDE2NzQ5NjV9.WCv1A2dpUggTUwNdAoDGLRD_lK7VwSttRTXKpzuWDT0
+
+### Bookmark a job (requires authentication)
+POST http://localhost:5000/bookmarks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzQxNjcxMzY1LCJleHAiOjE3NDE2NzQ5NjV9.WCv1A2dpUggTUwNdAoDGLRD_lK7VwSttRTXKpzuWDT0
+
+{
+  "jobId": 1
+}
+
+### Get bookmarked jobs (requires authentication)
+GET http://localhost:5000/bookmarks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzQxNzU5MTM0LCJleHAiOjE3NDE3NjI3MzR9.h5nH7TtE8OIbO7NErc4L8OClOOX-ZSbgh318zEbEXOc
+
+ 
+
